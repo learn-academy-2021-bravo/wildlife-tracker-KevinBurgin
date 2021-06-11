@@ -1,4 +1,8 @@
 class AnimalsController < ApplicationController
+    def show
+        animal =Animal.find(params[:id])
+        render json: Animal.where(animal_id:params[:id])
+    end
     def index
         animal = Animal.all
         render json: animal
